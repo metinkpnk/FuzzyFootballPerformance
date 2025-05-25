@@ -40,11 +40,11 @@ Kullanıcı arayüzü `tkinter` ile oluşturulmuş olup aşağıdaki bileşenler
 
 ### 📊 Girdi Üyelik Fonksiyonu Grafikler
 
-![Girdi Grafikler](GirdiGrafikler.PNG)
+![Girdi Grafikler](img/GirdiGrafikler.PNG)
 
 ### 📈 Çıktı Üyelik Fonksiyonu Grafikler
 
-![Çıktı Grafikler](ÇıktıGrafikler.PNG)
+![Çıktı Grafikler](img/ÇıktıGrafikler.PNG)
 
 ## ⚙️ Kullanılan Teknolojiler
 
