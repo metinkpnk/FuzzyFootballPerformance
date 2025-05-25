@@ -71,7 +71,7 @@ Arayüz `tkinter` kullanılarak geliştirilmiştir ve şu bölümleri içerir:
 
 Tüm arayüz bileşenlerinin birlikte görüldüğü bir ekran görüntüsü:
 
-![Tüm Arayüz](img/TumArayuz.PNG)
+![Tüm Arayüz](img/img/AnaSayfa.PNG)
 
 ---
 
