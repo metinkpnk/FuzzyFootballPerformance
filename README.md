@@ -1,80 +1,117 @@
-# FuzzyFootballPerformance
 
-# Futbol Takımı Performans Tahmini - Fuzzy Logic Uygulaması
+# ⚽ Futbolcu Maç Performansı ve Beklenen Gol Tahmini (Bulanık Mantık)
 
-Bu proje, Python dili ve `scikit-fuzzy` kütüphanesi kullanılarak geliştirilmiş, futbol takımı performansını ve beklenen gol sayısını tahmin eden bir **bulanık mantık (fuzzy logic)** tabanlı modeldir. Ayrıca `Tkinter` ile oluşturulmuş kullanıcı dostu bir arayüzü ve matplotlib grafiklerini içermektedir.
+Bu proje, futbolcuların istatistiksel özelliklerine göre **maç performansı** ve **beklenen gol sayısını** tahmin eden bir **bulanık mantık (fuzzy logic)** uygulamasıdır. Python programlama dili ile geliştirilmiş olan bu proje, kullanıcıdan belirli futbol istatistikleri alarak, bu verilere göre çıktılar üretir.
 
----
+## 🎯 Projenin Amacı
 
-## İçindekiler
-- [Proje Hakkında](#proje-hakkında)
-- [Kullanılan Teknolojiler](#kullanılan-teknolojiler)
-- [Fuzzy Mantık Modeli](#fuzzy-mantık-modeli)
-- [Kullanıcı Arayüzü](#kullanıcı-arayüzü)
-- [Kurulum ve Çalıştırma](#kurulum-ve-çalıştırma)
-- [Kullanım](#kullanım)
-- [Grafikler ve Görselleştirme](#grafikler-ve-görselleştirme)
-- [Geliştirme ve Katkı](#geliştirme-ve-katkı)
-- [Lisans](#lisans)
+Futbolculardan ya da takımlardan elde edilen bazı temel performans verilerini kullanarak, maç sırasında nasıl bir performans sergileyebileceklerini ve ortalama kaç gol atmalarının beklendiğini tahmin eden bir sistem geliştirmektir. Bu sistem, özellikle antrenörler, analiz ekipleri ve futbol istatistikçileri için yol gösterici olabilir.
 
----
+## 🔍 Kullanılan Giriş Verileri
 
-## Proje Hakkında
+Aşağıdaki 5 temel futbol istatistiği kullanıcıdan alınır:
 
-Bu uygulama, bir futbol takımının maç performansını ve beklenen gol sayısını tahmin etmek amacıyla aşağıdaki girdileri kullanır:
+| Özellik              | Açıklama |
+|----------------------|----------|
+| **Topa Sahiplik (%)**  | Oyunun yüzde kaçında top takımdaydı |
+| **Atak Sayısı**        | Maç boyunca yapılan toplam atak sayısı |
+| **Savunma Başarı (%)** | Rakibin ataklarına karşı yapılan başarılı savunma yüzdesi |
+| **Orta Yüzdesi (%)**   | Yapılan ortaların isabet oranı |
+| **Motivasyon (1-10)**  | Oyuncunun psikolojik ve fiziksel motivasyon derecesi |
 
-- Topa Sahiplik (%)  
-- Atak Sayısı  
-- Savunma Başarı (%)  
-- Orta Yüzdesi (%)  
-- Motivasyon (1-10 arası)
+Bu veriler, kullanıcı arayüzündeki form aracılığıyla girilmektedir.
 
-Bu girdiler fuzzy mantık ile değerlendirilerek maç performansı ve beklenen gol sayısı tahmini yapılır.
+## 🧠 Çıktılar
 
----
+Sistem bu girişlere göre aşağıdaki iki çıktıyı üretir:
 
-## Kullanılan Teknolojiler
+- **Maç Performansı (0-100)**: Futbolcunun maçtaki genel başarı seviyesi
+- **Beklenen Gol Sayısı (0-10)**: Maçta gol atma ihtimaline dayalı ortalama gol sayısı
 
-- Python 3.x  
-- [scikit-fuzzy (skfuzzy)](https://pythonhosted.org/scikit-fuzzy/) — Bulanık mantık işlemleri için  
-- Tkinter — Grafiksel kullanıcı arayüzü (GUI) için  
-- matplotlib — Grafiklerin çizimi için  
-- numpy — Sayısal işlemler için
+Bu çıktılar **bulanık mantık çıkarım sistemi (fuzzy inference system)** ile hesaplanır.
 
----
+## 🖥️ Kullanıcı Arayüzü
 
-## Fuzzy Mantık Modeli
+Kullanıcı arayüzü `tkinter` ile oluşturulmuş olup aşağıdaki bileşenleri içerir:
 
-- **Girdi Değişkenleri (Antecedents):**  
-  - Topa Sahiplik, Atak Sayısı, Savunma Başarı, Orta Yüzdesi, Motivasyon  
-- **Çıktı Değişkenleri (Consequents):**  
-  - Maç Performansı, Beklenen Gol  
-- **Üyelik Fonksiyonları:**  
-  - Her değişken için `kotu`, `orta` ve `iyi` gibi üç bulanık küme tanımlanmıştır.  
-- **Kurallar:**  
-  - Girdiler arasındaki ilişkiler kurallar ile modellenmiştir. Örneğin:  
-    - "Topa sahiplik, atak sayısı ve motivasyon yüksekse maç performansı yüksek olur."  
-    - "Savunma başarısı ve orta yüzdesi orta ise maç performansı orta olur."  
-    - "Motivasyon veya savunma başarısı kötü ise maç performansı düşük olur."  
-- Bu kuralların sonuçları beklenen gol tahminine de etki eder.
+### 📌 Giriş Paneli
 
----
+![Giriş Paneli](Değerler.PNG)
 
-## Kullanıcı Arayüzü
+### 📊 Girdi Üyelik Fonksiyonu Grafikler
 
-- Girdi alanları: Kullanıcıdan futbol performans göstergeleri alınır.  
-- Hesapla butonu: Girdi verileri ile fuzzy kontrol sistemi çalıştırılır.  
-- Sonuç etiketleri: Maç performans tahmini ve beklenen gol sayısı sonucu gösterilir.  
-- Notebook ile iki sekme:  
-  - **Girdi Grafikleri:** Girdi değişkenlerinin üyelik fonksiyonları ve seçilen değerler kırmızı çizgi ile gösterilir.  
-  - **Çıktı Grafikleri:** Tahmin edilen maç performansı ve gol sayısının üyelik fonksiyonları ile birlikte sonuç değerleri grafik üzerinde gösterilir.
+![Girdi Grafikler](GirdiGrafikler.PNG)
 
----
+### 📈 Çıktı Üyelik Fonksiyonu Grafikler
 
-## Kurulum ve Çalıştırma
+![Çıktı Grafikler](ÇıktıGrafikler.PNG)
 
-1. Python 3.x yüklü olmalıdır.  
-2. Gerekli kütüphaneleri yükleyin:
+## ⚙️ Kullanılan Teknolojiler
+
+- 🐍 **Python 3.x**
+- 🔢 **scikit-fuzzy** – Bulanık mantık çıkarım sistemi için
+- 🎨 **matplotlib** – Grafik çizimleri için
+- 🧱 **tkinter** – GUI oluşturmak için
+
+## 🧪 Örnek Kurallar
+
+Sistemde tanımlı örnek bulanık kurallardan bazıları şunlardır:
+
+- Eğer **Topa Sahiplik** iyiyse VE **Atak Sayısı** iyiyse, o zaman **Beklenen Gol** yüksektir.
+- Eğer **Savunma Başarısı** kötüyse VE **Motivasyon** düşükse, o zaman **Maç Performansı** düşüktür.
+- Eğer **Orta Yüzdesi** ortaysa VE **Atak Sayısı** yüksekse, o zaman **Beklenen Gol** ortadır.
+
+## 📁 Dosya Yapısı
+
+```
+futbol-performans-tahmin/
+│
+├── main.py                  # Ana uygulama dosyası (GUI ve tahmin motoru)
+├── grafikler.py             # Grafik çizim fonksiyonları
+├── fuzzy_sistem.py          # Bulanık mantık kuralları ve üyelik fonksiyonları
+├── Değerler.PNG             # Giriş panel ekran görüntüsü
+├── GirdiGrafikler.PNG       # Girdi grafik ekran görüntüsü
+├── ÇıktıGrafikler.PNG       # Çıktı grafik ekran görüntüsü
+└── README.md                # Proje açıklama dosyası
+```
+
+## 👨‍💻 Geliştirici
+
+- **Metin Kepenek**
+
+## 🚀 Kurulum ve Çalıştırma
+
+Aşağıdaki adımları takip ederek projeyi kendi bilgisayarınızda çalıştırabilirsiniz:
+
+### 1. 📥 Projeyi Klonlayın
 
 ```bash
-pip install numpy scikit-fuzzy matplotlib
+git clone https://github.com/kullanici-adi/futbol-performans-tahmin.git
+cd futbol-performans-tahmin
+```
+
+### 2. 🧪 Sanal Ortam Oluşturun (Opsiyonel)
+
+```bash
+python -m venv venv
+venv\Scripts\activate        # Windows için
+source venv/bin/activate    # Linux/macOS için
+```
+
+### 3. 📦 Gereken Kütüphaneleri Kurun
+
+```bash
+pip install -r requirements.txt
+```
+
+Eğer `requirements.txt` dosyanız yoksa aşağıdaki komutu kullanabilirsiniz:
+
+```bash
+pip install scikit-fuzzy matplotlib
+```
+
+### 4. ▶️ Uygulamayı Başlatın
+
+```bash
+python main.py
+```
