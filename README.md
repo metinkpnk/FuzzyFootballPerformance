@@ -36,7 +36,7 @@ Kullanıcı arayüzü `tkinter` ile oluşturulmuş olup aşağıdaki bileşenler
 
 ### 📌 Giriş Paneli
 
-![Giriş Paneli](Değerler.PNG)
+![Giriş Paneli](img/Değerler.PNG)
 
 ### 📊 Girdi Üyelik Fonksiyonu Grafikler
 
