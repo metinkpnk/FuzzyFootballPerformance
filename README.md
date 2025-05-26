@@ -125,7 +125,7 @@ GitHub: [github.com/metinkepenek](https://github.com/metinkepenek)
 ### 1. Projeyi Klonlayın
 
 ```bash
-git clone https://github.com/kullanici-adi/futbol-performans-tahmin.git
+git clone https://github.com/metinkpnk/FuzzyFootballPerformance.git
 cd futbol-performans-tahmin
 ```
 
@@ -152,7 +152,7 @@ pip install scikit-fuzzy matplotlib
 ### 4. Uygulamayı Başlatın
 
 ```bash
-python main.py
+python fuzzy.py
 ```
 
 ---
