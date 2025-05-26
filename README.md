@@ -99,13 +99,11 @@ Sistemde yer alan bazı bulanık kurallar:
 ```
 futbol-performans-tahmin/
 |
-├── main.py                  # Ana uygulama (GUI + hesaplama)
-├── grafikler.py             # Grafik fonksiyonları
-├── fuzzy_sistem.py          # Bulanık mantık ve kurallar
+├── fuzzy.py                  # Ana uygulama (GUI + hesaplama)
 ├── Değerler.PNG             # Giriş paneli ekran gör.
 ├── GirdiGrafikler.PNG       # Girdi grafik ekran gör.
 ├── ÇıktıGrafikler.PNG       # Çıktı grafik ekran gör.
-├── TumArayuz.PNG            # Tüm sistem ekran gör.
+├── AnaSayfa.PNG            # Tüm sistem ekran gör.
 └── README.md                # Proje dokümantasyonu
 ```
 
