@@ -114,7 +114,7 @@ futbol-performans-tahmin/
 * ✨ **Metin Kepenek**
   Mersin Üniversitesi - Bilgi Sistemleri ve Teknolojileri Öğrencisi
 
-GitHub: [github.com/metinkepenek](https://github.com/metinkepenek)
+GitHub: [github.com/metinkpnk](https://github.com/metinkepenek)
 
 ---
 
@@ -164,4 +164,4 @@ python fuzzy.py
 
 ---
 
-Her türlü geri bildirim için bizimle iletişime geçebilirsiniz. Projeyi faydalı bulduysanız ⭐ bırakmayı unutmayın! ⚽
+Her türlü geri bildirim için benimle iletişime geçebilirsiniz. Projeyi faydalı bulduysanız ⭐ bırakmayı unutmayın! ⚽
