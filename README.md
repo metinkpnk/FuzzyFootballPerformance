@@ -71,7 +71,7 @@ Arayüz `tkinter` kullanılarak geliştirilmiştir ve şu bölümleri içerir:
 
 Tüm arayüz bileşenlerinin birlikte görüldüğü bir ekran görüntüsü:
 
-![Ana Sayfa](img/img/AnaSayfa.PNG)
+![Ana Sayfa](img/AnaSayfa.PNG)
 
 ---
 
@@ -114,7 +114,7 @@ futbol-performans-tahmin/
 * ✨ **Metin Kepenek**
   Mersin Üniversitesi - Bilgi Sistemleri ve Teknolojileri Öğrencisi
 
-GitHub: [github.com/metinkpnk](https://github.com/metinkepenek)
+GitHub: [github.com/metinkpnk](https://github.com/metinkpnk)
 
 ---
 
