@@ -123,8 +123,8 @@ GitHub: [github.com/metinkepenek](https://github.com/metinkepenek)
 ### 1. Projeyi Klonlayın
 
 ```bash
-git clone https://github.com/metinkpnk/FuzzyFootballPerformance.git
-cd futbol-performans-tahmin
+git clone https://github.com/metinkpnk/FuzzyFootballPerformance
+cd FuzzyFootballPerformance
 ```
 
 ### 2. Sanal Ortam Oluşturun (Opsiyonel)
